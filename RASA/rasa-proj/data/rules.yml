@@ -1,0 +1,48 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Play media
+  steps:
+  - intent: play
+  - action: action_play
+  - action: utter_onplay
+
+- rule: Pause media
+  steps:
+  - intent: pause
+  - action: action_pause
+  - action: utter_onpause
+
+- rule: Resume media
+  steps:
+  - intent: resume
+  - action: action_resume
+  - action: utter_onresume
+
+- rule: Stop media
+  steps:
+  - intent: stop
+  - action: action_stop
+  - action: utter_onstop
+
+- rule: Provide capabilities
+  steps:
+  - intent: help
+  - action: utter_help
+
+- rule: Resume media
+  steps:
+  - intent: resume
+  - action: action_resume
+  - action: utter_onresume

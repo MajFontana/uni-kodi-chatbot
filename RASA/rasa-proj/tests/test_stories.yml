@@ -1,0 +1,106 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+- story: happy path 1
+  steps:
+  - user: |
+      Hello! I'm Marc
+    intent: greet
+  - action: utter_greet
+  - user: |
+      what can you do?
+    intent: help
+  - action: utter_help
+  - user: |
+      then please play the movie ["the good the bad and the ugly"](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+
+- story: happy path 2
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      play [Awolnation Sail](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+  - user: |
+      no stop that
+    intent: stop
+  - action: action_stop
+  - action: utter_onstop
+  - user: |
+      play ["AWOLNATION - Sail.mp3"](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+  - user: |
+      stop
+    intent: stop
+  - action: action_stop
+  - action: utter_onstop
+
+- story: happy path 3
+  steps:
+  - user: |
+      I want to listen to [Feel Good Inc](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+  - user: |
+      how about you pause that for a second
+    intent: pause
+  - action: action_pause
+  - action: utter_onpause
+  - user: |
+      I need to go. Bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: happy path 4
+  steps:
+  - user: |
+      pause playback
+    intent: pause
+  - action: action_pause
+  - action: utter_onpause
+  - user: |
+      ok now resume it again
+    intent: resume
+  - action: action_resume
+  - action: utter_onresume
+  - user: |
+      mute volume please
+    intent: nlu_fallback
+  - action: utter_unknown
+  - user: |
+       play video [peanut.mp4](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+
+- story: happy path 5
+  steps:
+  - user: |
+      amke me a lemonade
+    intent: nlu_fallback
+  - action: utter_greet
+  - user: |
+      turn on tv
+    intent: nlu_fallback
+  - action: utter_help
+  - user: |
+      play [Na GOlici](title)
+    intent: play
+  - action: action_play
+  - action: utter_onplay
+  - user: |
+      thanks bye
+    intent: goodbye
+  - action: utter_goodbye

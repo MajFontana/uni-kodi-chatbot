@@ -1,0 +1,112 @@
+version: "3.1"
+
+stories:
+
+- story: happy path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: help
+  - action: utter_help
+  - intent: play
+    entities:
+    - title: very_nice.mp4
+  - action: action_play
+  - action: utter_onplay
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: play
+    entities:
+    - title: diffusion
+  - action: action_play
+  - action: utter_onplay
+  - intent: stop
+  - action: action_stop
+  - action: utter_onstop
+  - intent: play
+    entities:
+    - title: Green - diffusion.wav
+  - action: action_play
+  - action: utter_onplay
+  - intent: stop
+  - action: action_stop
+  - action: utter_onstop
+
+- story: happy path 3
+  steps:
+  - intent: play
+    entities:
+    - title: Summer Rain Drops 2017
+  - action: action_play
+  - action: utter_onplay
+  - intent: pause
+  - action: action_pause
+  - action: utter_onpause
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: happy path 4
+  steps:
+  - intent: pause
+  - action: action_pause
+  - action: utter_onpause
+  - intent: resume
+  - action: action_resume
+  - action: utter_onresume
+  - intent: nlu_fallback
+  - action: utter_unknown
+  - intent: play
+    entities:
+    - title: 2011_05_11_by_the_book
+  - action: action_play
+  - action: utter_onplay
+
+- story: happy path 5
+  steps:
+  - intent: nlu_fallback
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: utter_help
+  - intent: play
+    entities:
+    - title: HAve faith
+  - action: action_play
+  - action: utter_onplay
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: help
+  - action: utter_help
+  - intent: pause
+  - action: action_pause
+  - action: utter_onpause
+  - intent: resume
+  - action: action_resume
+  - action: utter_onresume
+  - intent: play
+    entities:
+    - title: How To Train Your Dragon 2
+  - action: action_play
+  - action: utter_onplay
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: play
+    entities:
+    - title: Interstellar.mov
+  - action: action_play
+  - action: utter_onplay
+  - intent: play
+    entities:
+    - title: gimme.mp3
+  - action: action_play
+  - action: utter_onplay

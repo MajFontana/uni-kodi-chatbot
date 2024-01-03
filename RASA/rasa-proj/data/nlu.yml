@@ -1,0 +1,95 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks for your help. have a nice day
+- intent: stop
+  examples: |
+    - I don't want to watch anymore
+    - I'm done watching
+    - I don't want to listen to this song anymore
+    - Stop playback
+    - please stop the song
+    - stop the movie
+    - stop the video please
+    - can you stop the song?
+    - stop that
+    - stop
+- intent: play
+  examples: |
+    - I want to listen to [Moby - Lift Me Up](title)
+    - I'd like to watch [LordOfTheRings.mov](title)
+    - play [test_song.wav](title)
+    - can you play [mov007.mp4])(title) please
+    - show me [Spectre_2016_slo_sub](title)
+    - let's hear [joe-rogan-podcast-364](title)
+    - let's see [video_2023-05-24_11-19-36.mp4](title)
+    - I wanna watch [BCS Se3 Ep2](title)
+    - play video [twdown-ehf839fs0du.webm](title)
+    - play the movie [For a few dollars more](title)
+    - play the song titled [Never Gonna Give You Up](title)
+    - Play a song. Filename is [newtest.mp3](title)
+    - play file [SorryButHowEven.webm](title)
+    - play [How To Train Your Dragon 2](title)
+    - play [Interstellar.mov](title)
+    - play [gimme.mp3](title)
+- intent: pause
+  examples: |
+    - pause
+    - pause please
+    - pause the song please
+    - can you pause that for a second
+    - pause the video
+    - pause the movie
+    - pause the song
+    - pause current song
+- intent: resume
+  examples: |
+    - resume
+    - resume please
+    - please resume the song
+    - continue the video
+    - can we continue with the movie?
+    - resume playback
+    - put it back on
+    - can you resume it again?
+- intent: help
+  examples: |
+    - what can you do
+    - what do you do
+    - help
+    - can you go to youtube?
+    - can you turn on subtitles?
+    - can you brush my cat?
+    - can you turn on repat mode
+    - are you able to buy me a car
+    - what can you help me with?
+    - what commands do you know?
+    - why don't you understand me
+    - can you not change the volume?
+    - what can you do for me?

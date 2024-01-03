@@ -1,0 +1,49 @@
+version: '3.1'
+intents:
+- goodbye
+- greet
+- help
+- pause
+- play
+- resume
+- stop
+responses:
+  utter_greet:
+  - text: Hi! I'm MIbot, a Kodi chatbot. What would you like to do today?
+  utter_goodbye:
+  - text: Goodbye!
+  utter_unknown:
+  - text: I'm sorry, I didn't understand that.
+  utter_onplay:
+  - text: Playing {title}
+  utter_onpause:
+  - text: Pausing playback.
+  utter_onresume:
+  - text: Resuming playback.
+  utter_onstop:
+  - text: Stopping playback.
+  utter_help:
+  - text: I can control the media playback (like pausing or resuming) for you. You can also tell me to play a media file.
+actions:
+- utter_onplay
+- action_play
+- utter_help
+- action_pause
+- action_resume
+- utter_goodbye
+- utter_greet
+- utter_onpause
+- utter_onresume
+- action_stop
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+entities:
+- title
+slots:
+  title:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: title
